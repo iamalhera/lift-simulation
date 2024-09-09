@@ -1,0 +1,102 @@
+::-webkit-scrollbar {
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(84, 81, 81); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: darkgray; 
+    border-radius: 10px;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+#error-text{
+    color:red;
+}
+#simulate-here{
+    position: relative;
+}
+.floor{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100px;
+    box-sizing: border-box;
+}
+.floor-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.floor-buttons button{
+    width: 25x;
+    height: 25px;
+    background-color: rgb(116, 115, 115);
+    border-radius: 5px;
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 4px;
+}
+.floor-space{
+    width: 100%;
+    height: 100%;;
+    background-color: lightcyan;
+}
+.floor-number{
+    width: 8%;
+    text-align: justify;
+}
+
+
+/* lifts */
+.lift{
+    background-color: gray;
+    height: 50px;
+    width: 30px;
+    display: flex;
+    position: absolute;
+    transition: transform 2s ease;
+}
+
+.left-door{
+    box-sizing: border-box;
+    background-color: orange;
+    border-right: 1px solid black;
+    height: 100%;
+    width: 15px;
+    transition: width 2.5s ease ;
+}
+
+.right-door{
+    box-sizing: border-box;
+    background-color: orange;
+    border-right: 1px solid black;
+    height: 100%;
+    width: 15px;
+    transition: width 2.5s ease ;
+}
+
+.door-opening{
+    width : 0;
+} 
+
+.lift-parent-div{
+    box-sizing: border-box;
+    width: 87% ;
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    height: 100%;
+    overflow-x: auto;
+}
