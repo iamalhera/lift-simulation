@@ -23,7 +23,7 @@ btn_simulate.addEventListener("click", () => {
     if(isNaN(numberOfFloors) || isNaN(numberofLifts)){
         errortext.innerHTML = "There should be input in both fields";
     }
-    else if(numberOfFloors ==0 || numberofLifts == 0){
+    else if(numberOfFloors <=0 || numberofLifts <= 0){
         errortext.innerHTML ="Lifts and Floors should be more than 0 ";
     }
     else{
@@ -94,14 +94,11 @@ btn_simulate.addEventListener("click", () => {
         liftDiv.style.left = liftPositionLeft + "px";
         liftPositionLeft += 60;
         
-        leftDoor = document.createElement("div");
-        leftDoor.className = 'left-door';
         
-        rightDoor = document.createElement("div");
-        rightDoor.className = 'right-door';
+        liftDoor = document.createElement("div");
+        liftDoor.className = 'lift-door';
         
-        liftDiv.append(leftDoor);
-        liftDiv.append(rightDoor);
+        liftDiv.append(liftDoor);
         Lifts.push(liftDiv);
         liftParentDiv.appendChild(liftDiv);
     }
@@ -220,10 +217,8 @@ const liftDraggingFunction =(lift, floorPosition) => new Promise((resolve)=>{
 //opening and closing of the door
 const openClosingDoor = (lift) => new Promise((resolve)=>{ // total time 2.5+ 1.5+ 2.5 = 6.5seconds
     lift.childNodes[0].classList.add('door-opening');
-    lift.childNodes[1].classList.add('door-opening');
     setTimeout(() => { // opening door time + staying for 1.5 seconds
         lift.childNodes[0].classList.remove('door-opening');
-        lift.childNodes[1].classList.remove('door-opening');
         setTimeout(()=>{ //closing door time
             resolve();
         },2500);

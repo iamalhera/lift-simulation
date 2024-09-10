@@ -75,21 +75,12 @@ body{
     transition: transform 2s ease;
 }
 
-.left-door{
+.lift-door{
     box-sizing: border-box;
     background-color: orange;
     border-right: 1px solid black;
     height: 100%;
-    width: 15px;
-    transition: width 2.5s ease ;
-}
-
-.right-door{
-    box-sizing: border-box;
-    background-color: orange;
-    border-right: 1px solid black;
-    height: 100%;
-    width: 15px;
+    width: 30px;
     transition: width 2.5s ease ;
 }
 
