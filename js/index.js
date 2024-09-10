@@ -186,7 +186,7 @@ const idleLiftMovement = async (toMoveLift, cb) =>{
 // total movement of lifts taking from queue
 const moveLiftFunction = async (liftToMove, floorPosition, cb) =>{
     liftToMove.dataset.ismoving = 1;  //change the lift to moving position
-    await openClosingDoor(liftToMove); 
+    // await openClosingDoor(liftToMove); 
 
     //function to move lift to that floor
     await liftDraggingFunction(liftToMove, floorPosition);
