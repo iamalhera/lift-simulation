@@ -9,6 +9,17 @@ var Floors = [];
 var queue =[]; // {floorPosition, cb}
 let isQueueWorking = false;
 
+inputFloors.addEventListener("keydown", (event)=>{
+    if(event.key == "Enter"){
+        inputLifts.focus();
+    }
+})
+inputLifts.addEventListener("keydown", (event)=>{
+    if(event.key == "Enter"){
+        btn_simulate.click();
+    }
+})
+
 
 btn_simulate.addEventListener("click", () => {
     // reset-if we simulate again with different values
@@ -223,5 +234,5 @@ const openClosingDoor = (lift) => new Promise((resolve)=>{ // total time 2.5+ 1.
         setTimeout(()=>{ //closing door time
             resolve();
         },2500);
-    }, 2500 + 1500); //2.5seconds for opening door, 1.5 seconds of stay to make passenger enter the lift 
+    }, 2500); //2.5seconds for opening door, 1.5 seconds of stay to make passenger enter the lift 
 });
