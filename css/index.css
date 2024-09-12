@@ -60,8 +60,9 @@ body{
 .floor-number{
     padding-left: 5px;
     width: 12px;
-    text-align: justify;
+    display: flex;
     font-weight: bold;
+    height: 100%;
 }
 
 

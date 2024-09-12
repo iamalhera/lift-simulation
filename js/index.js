@@ -15,13 +15,14 @@ btn_simulate.addEventListener("click", () => {
     simulate_block.innerHTML ="";
     Lifts =[];
     Floors=[];
+    queue=[];
 
-    var numberOfFloors = parseInt(inputFloors.value);
-    var numberofLifts = parseInt(inputLifts.value);
+    var numberOfFloors = Number(inputFloors.value);
+    var numberofLifts = Number(inputLifts.value);
 
-    //validation
-    if(isNaN(numberOfFloors) || isNaN(numberofLifts)){
-        errortext.innerHTML = "There should be input in both fields";
+    // validation
+    if(isNaN(numberOfFloors) || isNaN(numberofLifts) || numberOfFloors =="" || numberofLifts == ""){
+        errortext.innerHTML = "Valid Input: Number from 1 onwards";
     }
     else if(numberOfFloors <=0 || numberofLifts <= 0){
         errortext.innerHTML ="Lifts and Floors should be more than 0 ";
@@ -204,7 +205,7 @@ const liftDraggingFunction =(lift, floorPosition) => new Promise((resolve)=>{
     //lets say delta is 400 i.e go to 4th floor, so total time will be 
     let timeTaken = (Math.abs(delta)/100)*2;
     lift.style.bottom =  floorPosition + "px";
-    lift.style.transition = `bottom ${timeTaken}s ease-in-out`;
+    lift.style.transition = `bottom ${timeTaken}s linear`;
     
     setTimeout(()=>{
         //assigning new position to that particular lift
