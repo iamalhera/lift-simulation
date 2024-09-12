@@ -30,7 +30,7 @@ btn_simulate.addEventListener("click", () => {
     else{
         errortext.innerHTML =""; //to remove error text of earlier inputs
     //FLOOR CREATION ***********************************************8
-        for (let i = numberOfFloors; i >= 0; i--) {
+        for (let i = numberOfFloors; i > 0; i--) {
             //creating a node for floors
             const floorDiv = document.createElement('div');
             floorDiv.className = `floor`;
@@ -41,11 +41,11 @@ btn_simulate.addEventListener("click", () => {
             floorNumber.className = "floor-number";
             floorDiv.appendChild(floorNumber);
     
-            if (i == 0) {
+            if (i == 1) {
                 floorNumber.textContent = "G";
             }
             else {
-                floorNumber.textContent = `${i}`;
+                floorNumber.textContent = `${i-1}`;
             }
             //creating floor childs
             const floorBtns = document.createElement('div');
@@ -55,7 +55,7 @@ btn_simulate.addEventListener("click", () => {
         if (i != numberOfFloors) {
             const btnUp = document.createElement('button');
             btnUp.id = `btn-up-${i}`;
-            let floorPosition = 100*i;
+            let floorPosition = 100*(i-1);
             btnUp.dataset.fl_position = floorPosition;
             btnUp.textContent = "▲";
             //adding click handeler and transfering my event to buttonClickHandeler
@@ -63,10 +63,10 @@ btn_simulate.addEventListener("click", () => {
             floorBtns.appendChild(btnUp);
         }
         
-        if (i != 0) {
+        if ((i-1) != 0) {
             const btnDown = document.createElement('button');
             btnDown.id = `btn-down-${i}`;
-            let floorPosition = 100*i;
+            let floorPosition = 100*(i-1);
             btnDown.dataset.fl_position = floorPosition;
             btnDown.textContent = "▼";
             //adding click handeler and transfering my event to buttonClickHandeler
